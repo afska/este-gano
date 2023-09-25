@@ -8,11 +8,11 @@ See [encoder.spec.js](src/encoder.spec.js)
 
 ### Web version
 
-https://rodri042.github.io/este-gano/
+https://afska.github.io/este-gano/
 
 ### Chrome extension
 
-- Download the extension from the [Releases](https://github.com/rodri042/este-gano/releases) section
+- Download the extension from the [Releases](https://github.com/afska/este-gano/releases) section
 - Open any chat app
 - Enable the extension by using the button
 - Type `![this syntax]` to add secret messages

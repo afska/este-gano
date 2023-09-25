@@ -18,7 +18,7 @@ export default class App extends PureComponent {
 				<h1>éste-ganó</h1>
 				<h2>Encode secret messages by using ![this syntax]</h2>
 				<h2>
-					<a href="https://github.com/rodri042/este-gano">Fork me on GitHub!</a>
+					<a href="https://github.com/afska/este-gano">Fork me on GitHub!</a>
 				</h2>
 				<div>
 					<h3>Encode:</h3>
