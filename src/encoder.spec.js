@@ -1,10 +1,12 @@
 import encoder from "./encoder";
 require("chai").Should();
 
+const DICTIONARY = ["\u200b", "\u200c"];
+
 describe("Encoder", () => {
 	it("can encode secret messages as zero-width characters", () => {
 		encoder
-			.encode("Hello, ![I hate the ]world")
+			.encode("Hello, ![I hate the ]world", DICTIONARY)
 			.should.equal(
 				"Hello, ⁢‌​​‌​​‌⁠‌​​​​​⁠‌‌​‌​​​⁠‌‌​​​​‌⁠‌‌‌​‌​​⁠‌‌​​‌​‌⁠‌​​​​​⁠‌‌‌​‌​​⁠‌‌​‌​​​⁠‌‌​​‌​‌⁠‌​​​​​⁠⁢world"
 			);
@@ -13,7 +15,8 @@ describe("Encoder", () => {
 	it("can decode secret messages from zero-width characters", () => {
 		encoder
 			.decode(
-				"Hello, ⁢‌​​‌​​‌⁠‌​​​​​⁠‌‌​‌​​​⁠‌‌​​​​‌⁠‌‌‌​‌​​⁠‌‌​​‌​‌⁠‌​​​​​⁠‌‌‌​‌​​⁠‌‌​‌​​​⁠‌‌​​‌​‌⁠‌​​​​​⁠⁢world"
+				"Hello, ⁢‌​​‌​​‌⁠‌​​​​​⁠‌‌​‌​​​⁠‌‌​​​​‌⁠‌‌‌​‌​​⁠‌‌​​‌​‌⁠‌​​​​​⁠‌‌‌​‌​​⁠‌‌​‌​​​⁠‌‌​​‌​‌⁠‌​​​​​⁠⁢world",
+				DICTIONARY
 			)
 			.should.equal("Hello, ![I hate the ]world");
 	});
